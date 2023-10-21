@@ -1,4 +1,4 @@
-// #include <Gestor.hpp>
+#include <Gestor.hpp>
 #include <iostream>
 using namespace std;
 
@@ -38,6 +38,8 @@ int main(int argc, char** argv)
                 "el pedido Urgente con menor prioridad "
                 "prioridad.\n";
         cout << "\tL. Reiniciar el programa.\n";
+        
+        
         cout << "\tM. Crear y dibujar el ABB en consola.\n";
         cout << "\tN. Mostrar los datos de todos los Pedidos Estandar ordenados "
                 "por numero de seguimiento en orden ascendente.\n";
