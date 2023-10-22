@@ -6,10 +6,13 @@ public:
     Cola();
     ~Cola();
     
-    void insertar(int v);
-    int eliminar();
+    void insertar(Paquete* p);
+    Paquete* eliminar();
     void mostrar();
-    int verPrimero();
+    Paquete* verPrimero();
+    
+    int getLongitud();
+    pnodoCola getPrimero();
 
 private:
     pnodoCola primero, ultimo;

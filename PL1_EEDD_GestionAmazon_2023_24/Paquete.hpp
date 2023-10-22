@@ -1,20 +1,40 @@
-#ifndef PAQUETE_HPP
-#define PAQUETE_HPP
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+using namespace std;
 
 class Paquete
 {
+    
 public:
+
+//ATRIBUTOS
     Paquete();
+    //GET
+    bool getPrioridad();
+    string getID();
+    int getNum_seguimiento();
+    char* getDNI();
+    
+    //SET
+    bool setPrioridad();
+    string setID();
+    int setNum_seguimiento();
+    char setDNI();
     ~Paquete();
     
     
 private:
 
-    bool tipoPrioridad;
-    char ID_Paquete[10];
+//ATRIBUTOS
+    bool prioridad;
+    string ID {"None"};
     int num_seguimiento{0};
-    char DNI_Cliente[10];
-    
+    char DNI[10];
+
+//METODOS
+    void generarDNI();
+    void generarNumSeguimiento();
 };
 
-#endif // PAQUETE_HPP

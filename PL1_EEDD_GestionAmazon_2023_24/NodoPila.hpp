@@ -1,16 +1,17 @@
 #include <iostream>
+#include <Paquete.hpp>
 
 using namespace std;
 
 class NodoPila
 {
 public:
-    NodoPila(int v, NodoPila* sig = NULL);
+    NodoPila(Paquete* p, NodoPila* sig = NULL);
     ~NodoPila();
 
 
 private:
-    int valor;
+    Paquete* paquete;
     NodoPila* siguiente;
     friend class Pila;
 };

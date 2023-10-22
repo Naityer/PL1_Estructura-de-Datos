@@ -6,47 +6,65 @@ Pila::Pila()
     longitud = 0;
 }
 
-void Pila:: insertar(int v)
+void Pila::insertar(Paquete* p)
 {
     pnodoPila nuevo;
-    nuevo = new NodoPila(v, ultimo);
+    nuevo = new NodoPila(p, ultimo);
     ultimo = nuevo;
     longitud++;
 }
 
-int Pila::extraer()
+Paquete* Pila::extraer()
 {
     pnodoPila nodo;
-    int v;
+    Paquete* p;
     if(!ultimo)
         return 0;
         
     nodo = ultimo;
     ultimo = nodo->siguiente;
-    v = nodo->valor;
+    p = nodo->paquete;
     longitud--;
     delete nodo;
-    return v;
+    return p;
 }
 
-int Pila:: cima()
+Paquete* Pila:: cima()
 {
     //pnodoPila nodo;
     if (!ultimo)
-        return 0;
-    return ultimo->valor;
+        return NULL;
+    return ultimo->paquete;
 }
+
 
 void Pila::mostrar()
 {
     pnodoPila aux = ultimo;
-    cout << "\tEl contenido de la pila es: ";
+    cout << "\tEl contenido de la pila" << endl;
+    cout << "===================================" << endl;
+    cout << endl; 
+    
+    // Títulos de las columnas
+    cout << left << setw(20) << "TIPO_PRIORIDAD" << setw(20) << "ID_PAQUETE" << setw(20) << "NUM_SEGUIMIENTO" << setw(20) << "DNI_CLIENTE" << endl;
+    cout << left << setw(20) << "______________" << setw(20) << "__________" << setw(20) << "_______________" << setw(20) << "___________" << endl;
 
-    while(aux){
-        cout << "-> " << aux->valor;
-        aux = aux ->siguiente;
+    while(aux) {
+        // Datos de la fila
+        cout << left << setw(20) << aux->paquete->getPrioridad() << setw(20) << aux->paquete->getID() << setw(20) << aux->paquete->getNum_seguimiento() << setw(20) << aux->paquete->getDNI() << endl;
+        // Separacion de columnas
+        cout << left << setw(20) << "______________" << setw(20) << "__________" << setw(20) << "_______________" << setw(20) << "___________" << endl;        
+         aux = aux ->siguiente;
     }
     cout << endl;
+    
+{
+//    // Datos de la fila
+//    cout << left << setw(20) << tipoPrioridad << setw(20) << ID_Paquete << setw(20) << num_seguimiento << setw(20) << DNI_Cliente << endl;
+//    // Separacion de columnas
+//    cout << left << setw(20) << "______________" << setw(20) << "__________" << setw(20) << "_______________" << setw(20) << "___________" << endl;
+}
+    
 }
 
 int Pila::getLongitud()

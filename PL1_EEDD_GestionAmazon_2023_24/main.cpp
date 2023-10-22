@@ -4,7 +4,7 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-    // Gestor gestor;
+    Gestor gestor;
     char opcion;
 
     do {
@@ -68,16 +68,16 @@ int main(int argc, char** argv)
         switch(opcion) {
 
         case 'A':
-            // gestor.genera12Pedidos();
+            gestor.genera12Pedidos();
             break;
         case 'B':
-            // gestor.muestraPedidos();
+            gestor.muestraPedidos();
             break;
         case 'C':
-            // gestor.borraPedidosPila();
+            gestor.borraPedidosPila();
             break;
         case 'D':
-            // gestor.encolarPedidos();
+            gestor.encolarPedidos();
             break;
         case 'E':
             // gestor.muestraPedidosSalasAyB();

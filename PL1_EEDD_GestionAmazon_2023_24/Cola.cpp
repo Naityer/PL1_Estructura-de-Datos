@@ -7,10 +7,10 @@ Cola::Cola()
     longitud = 0;
 }
 
-void Cola::insertar(int v)
+void Cola::insertar(Paquete* p)
 {
     pnodoCola nuevo;
-    nuevo = new NodoCola(v);
+    nuevo = new NodoCola(p);
     
     if(ultimo)
         ultimo->siguiente = nuevo;
@@ -26,31 +26,31 @@ void Cola::mostrar()
     pnodoCola aux = primero;
     cout << "\tEl contenido de la cola es: ";
     while(aux) {
-        cout <<"-> " << aux->valor;
+        cout <<"-> " << aux->paquete;
         aux = aux->siguiente;
     }
     cout << endl;
 }
 
-int Cola::eliminar()
+Paquete* Cola::eliminar()
 {
     pnodoCola nodo;
-    int v;
+    Paquete* p;
     nodo = primero;
     if(!nodo)
-        return 0;
+        return NULL;
     primero = nodo->siguiente;
-    v = nodo->valor;
+    p = nodo->paquete;
     delete nodo;
     if(!primero)
         ultimo = NULL;
     longitud--;
-    return v;
+    return p;
 }
 
-int Cola::verPrimero()
+Paquete* Cola::verPrimero()
 {
-    return primero->valor;
+    return primero->paquete;
 }
 Cola::~Cola()
 {

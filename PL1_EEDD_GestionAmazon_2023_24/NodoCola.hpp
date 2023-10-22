@@ -1,15 +1,17 @@
 #include <iostream>
+#include "Paquete.hpp"
 
 using namespace std;
 
 class NodoCola
 {
 public:
-    NodoCola(int v, NodoCola* sig = NULL);
+    NodoCola(Paquete* p, NodoCola* sig = NULL);
     ~NodoCola();
 
 private:
-    int valor;
+
+    Paquete* paquete;
     NodoCola* siguiente;
     friend class Cola;
 

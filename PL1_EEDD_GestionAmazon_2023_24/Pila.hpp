@@ -6,9 +6,9 @@ public:
     Pila();
     ~Pila();
     
-    void insertar(int v);
-    int extraer();
-    int cima();
+    void insertar(Paquete* p);
+    Paquete* extraer();
+    Paquete* cima();
     void mostrar();
     int getLongitud();
     
