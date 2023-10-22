@@ -1,5 +1,8 @@
 #include <iostream>
-#include <Paquete.hpp>
+#include "Paquete.hpp"
+
+#ifndef NODOPILA_HPP
+#define NODOPILA_HPP
 
 using namespace std;
 
@@ -17,3 +20,5 @@ private:
 };
 
 typedef NodoPila* pnodoPila;
+
+#endif // NODOPILA_HPP

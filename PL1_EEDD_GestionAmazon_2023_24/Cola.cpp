@@ -7,6 +7,14 @@ Cola::Cola()
     longitud = 0;
 }
 
+//    Paquete* eliminar();
+//    void mostrar();
+//    Paquete* verPrimero();
+//    
+//    int getLongitud();
+//    pnodoCola getPrimero();
+//    
+//    void asignarID();
 void Cola::insertar(Paquete* p)
 {
     pnodoCola nuevo;
@@ -19,17 +27,6 @@ void Cola::insertar(Paquete* p)
     if(!primero)
         primero = nuevo;
     longitud++;
-}
-
-void Cola::mostrar()
-{
-    pnodoCola aux = primero;
-    cout << "\tEl contenido de la cola es: ";
-    while(aux) {
-        cout <<"-> " << aux->paquete;
-        aux = aux->siguiente;
-    }
-    cout << endl;
 }
 
 Paquete* Cola::eliminar()
@@ -48,10 +45,41 @@ Paquete* Cola::eliminar()
     return p;
 }
 
+void Cola::mostrar()
+{
+    pnodoCola aux = primero;
+    cout << "===================================" << endl;
+    cout << endl;
+    
+    // Títulos de las columnas
+    cout << left << setw(20) << "TIPO_PRIORIDAD" << setw(20) << "ID_PAQUETE" << setw(20) << "NUM_SEGUIMIENTO" << setw(20) << "DNI_CLIENTE" << endl;
+    cout << left << setw(20) << "______________" << setw(20) << "__________" << setw(20) << "_______________" << setw(20) << "___________" << endl;
+    
+    while(aux) {
+        // Datos de la fila
+        cout << left << setw(20) << aux->paquete->getPrioridad() << setw(20) << aux->paquete->getID() << setw(20) << aux->paquete->getNum_seguimiento() << setw(20) << aux->paquete->getDNI() << endl;
+        // Separacion de columnas
+        cout << left << setw(20) << "______________" << setw(20) << "__________" << setw(20) << "_______________" << setw(20) << "___________" << endl;  
+        aux = aux->siguiente;
+    }
+    cout << endl;
+}
+
 Paquete* Cola::verPrimero()
 {
     return primero->paquete;
 }
+
+int Cola::getLongitud()
+{
+    return longitud;
+}
+
+void Cola::setLongitud(int v) 
+{
+    this->longitud = v;
+}
+
 Cola::~Cola()
 {
     while(primero)

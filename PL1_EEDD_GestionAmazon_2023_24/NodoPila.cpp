@@ -2,7 +2,7 @@
 
 NodoPila::NodoPila(Paquete* p, NodoPila* sig)
 {
-    paquete = p;
+    this->paquete = p;
     siguiente = sig;
 }
 

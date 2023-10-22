@@ -5,8 +5,12 @@ Paquete::Paquete()
     this->prioridad = (rand() % 2);  // 0 = Estandar ; 1 = Urgente
     this->generarNumSeguimiento();
     this->generarDNI();
-    
 }
+
+int Paquete::countEstandarID = 0;
+int Paquete::countUrgenteID = 51;
+
+//FUNCIONES DE PAQUETES
 
 void Paquete::generarDNI()
 {
@@ -25,20 +29,37 @@ void Paquete::generarDNI()
 
 void Paquete::generarNumSeguimiento()
 {
-    this->num_seguimiento += 1;
+    this->num_seguimiento = rand() % 9000;
 }
 
-//    bool getPrioridad;
-//    string getID {"None"};
-//    int getNum_seguimiento{0};
-//    char getDNI[10];
+void Paquete::asignarID()
+{
+    // 0 - PRIORIDAD ESTANDAR
+    if(countEstandarID >= 0 && countEstandarID <= 49 && this->prioridad == 0) {
+            countEstandarID++;
+            this->ID = countEstandarID;
+    
+    // 1 - PRIORIDAD URGENTE
+    } else if (countUrgenteID >= 51 && countUrgenteID <= 99 && this->prioridad == 1) {
+        countUrgenteID++;
+        this->ID = countUrgenteID;
+    } 
+}
+
+// SETTER
+
+void Paquete::setID(){
+    this->asignarID();
+}
+
+//   GETTER getPrioridad;  getID {"None"}; getNum_seguimiento{0};  getDNI[10];
 
 bool Paquete::getPrioridad()
 {
     return this->prioridad;
 } 
    
-string Paquete::getID()
+int Paquete::getID()
 {
     return this->ID;
 }

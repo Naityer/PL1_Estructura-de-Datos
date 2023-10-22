@@ -13,34 +13,34 @@
     <TabInfo>
       <wxString Value="C:\Users\tiand\OneDrive\Escritorio\PL1_EEDD_GestionAmazon_2023_24\PL1_EEDD_GestionAmazon_2023_24\NodoPila.hpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="5" Name="CurrentLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\tiand\OneDrive\Escritorio\PL1_EEDD_GestionAmazon_2023_24\PL1_EEDD_GestionAmazon_2023_24\Pila.hpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="12" Name="CurrentLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\tiand\OneDrive\Escritorio\PL1_EEDD_GestionAmazon_2023_24\PL1_EEDD_GestionAmazon_2023_24\Paquete.hpp" Name="FileName"/>
-      <int Value="7" Name="FirstVisibleLine"/>
-      <int Value="30" Name="CurrentLine"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\tiand\OneDrive\Escritorio\PL1_EEDD_GestionAmazon_2023_24\PL1_EEDD_GestionAmazon_2023_24\Paquete.cpp" Name="FileName"/>
-      <int Value="7" Name="FirstVisibleLine"/>
-      <int Value="4" Name="CurrentLine"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\tiand\OneDrive\Escritorio\PL1_EEDD_GestionAmazon_2023_24\PL1_EEDD_GestionAmazon_2023_24\Gestor.cpp" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="17" Name="FirstVisibleLine"/>
       <int Value="27" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
@@ -48,21 +48,21 @@
     <TabInfo>
       <wxString Value="C:\Users\tiand\OneDrive\Escritorio\PL1_EEDD_GestionAmazon_2023_24\PL1_EEDD_GestionAmazon_2023_24\Gestor.hpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="15" Name="CurrentLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\tiand\OneDrive\Escritorio\PL1_EEDD_GestionAmazon_2023_24\PL1_EEDD_GestionAmazon_2023_24\main.cpp" Name="FileName"/>
-      <int Value="56" Name="FirstVisibleLine"/>
-      <int Value="69" Name="CurrentLine"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\tiand\OneDrive\Escritorio\PL1_EEDD_GestionAmazon_2023_24\PL1_EEDD_GestionAmazon_2023_24\Pila.cpp" Name="FileName"/>
-      <int Value="1" Name="FirstVisibleLine"/>
-      <int Value="20" Name="CurrentLine"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

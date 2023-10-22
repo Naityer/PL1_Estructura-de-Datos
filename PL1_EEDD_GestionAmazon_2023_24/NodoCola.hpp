@@ -1,6 +1,9 @@
 #include <iostream>
 #include "Paquete.hpp"
 
+#ifndef NODOCOLA_HPP
+#define NODOCOLA_HPP
+
 using namespace std;
 
 class NodoCola
@@ -18,3 +21,5 @@ private:
 };
 
 typedef NodoCola* pnodoCola;
+
+#endif // NODOCOLA_HPP

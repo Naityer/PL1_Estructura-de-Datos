@@ -4,22 +4,25 @@
 //#include "Lista.hpp"
 //#include "Arbol.hpp"
 
+#ifndef GESTOR_HPP
+#define GESTOR_HPP
+
 class Gestor
 {
 public:
     Gestor();
-    void genera12Pedidos(); // A
-    void muestraPedidos();  // B
-    void borraPedidosPila(); // C
-    void encolarPedidos(); // D
-    void muestraPedidosestacionsAyB(); // F
-    void muestraPedidosestacionsCyD(); // G
-    void borraPedidosColas(); // H
-    void enlistarPedidos(); // I
-    void muestraPedidosEstandar(); //J
-    void muestraPedidosUrgentes(); // K
-    void buscarPedidos(); // L
-    void reiniciar(); // M
+    void genera12Pedidos(); // Option A
+    void muestraPedidos();  // Option B
+    void borraPedidosPila(); // Option C
+    void encolarPedidos(); // Option D
+    void muestraPedidosSalasAyB(); // Option E
+    void muestraPedidosSalasCyD(); // Option F
+    void borraPedidosColas(); // Option G
+    void enlistarPedidos(); // Option H
+    void muestraPedidosEstandar(); // Option I
+    void muestraPedidosUrgentes(); // Option J
+    void buscarPedidos(); // Option K
+    void reiniciar(); // Option L
     ~Gestor();
     
 //    PedidosEnPila()
@@ -50,6 +53,7 @@ private:
 //    Lista* listaB;
 //    Arbol* arbol;
 
-
 };
+
+#endif // GESTOR_HPP
 

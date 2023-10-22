@@ -1,5 +1,8 @@
 #include <NodoPila.hpp>
 
+#ifndef PILA_HPP
+#define PILA_HPP
+
 class Pila
 {
 public:
@@ -10,11 +13,13 @@ public:
     Paquete* extraer();
     Paquete* cima();
     void mostrar();
-    int getLongitud();
     
+    int getLongitud();
+    void setLongitud(int v);
 private:
 
     pnodoPila ultimo;
     int longitud;
 };
 
+#endif // PILA_HPP
