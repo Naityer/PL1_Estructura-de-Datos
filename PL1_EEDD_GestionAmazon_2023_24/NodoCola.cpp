@@ -2,7 +2,7 @@
 
 NodoCola::NodoCola(Paquete* p, NodoCola* sig)
 {
-    paquete = p;
+    this->paquete = p;
     siguiente = sig;
 }
 

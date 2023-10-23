@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Pila.hpp"
 #include "Cola.hpp"
-//#include "Lista.hpp"
+#include "Lista.hpp"
 //#include "Arbol.hpp"
 
 #ifndef GESTOR_HPP
@@ -19,10 +19,11 @@ public:
     void muestraPedidosSalasCyD(); // Option F
     void borraPedidosColas(); // Option G
     void enlistarPedidos(); // Option H
-    void muestraPedidosEstandar(); // Option I
-    void muestraPedidosUrgentes(); // Option J
-    void buscarPedidos(); // Option K
-    void reiniciar(); // Option L
+    void borrarPedidosListas(); // Option I
+    void muestraPedidosEstandar(); // Option J
+    void muestraPedidosUrgentes(); // Option K
+    void buscarPedidos(); // Option L
+    void reiniciar(); // Option M
     ~Gestor();
     
 //    PedidosEnPila()
@@ -49,6 +50,8 @@ private:
     Cola* estacionB;
     Cola* estacionC;
     Cola* estacionD;
+    Lista* listaEstandar;
+    Lista* listaUrgente;
 //    Lista* listaA;
 //    Lista* listaB;
 //    Arbol* arbol;

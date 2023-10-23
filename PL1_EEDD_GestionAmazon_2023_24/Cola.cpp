@@ -7,14 +7,6 @@ Cola::Cola()
     longitud = 0;
 }
 
-//    Paquete* eliminar();
-//    void mostrar();
-//    Paquete* verPrimero();
-//    
-//    int getLongitud();
-//    pnodoCola getPrimero();
-//    
-//    void asignarID();
 void Cola::insertar(Paquete* p)
 {
     pnodoCola nuevo;

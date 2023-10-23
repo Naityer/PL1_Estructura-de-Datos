@@ -3,10 +3,10 @@
 Paquete::Paquete()
 {
     this->prioridad = (rand() % 2);  // 0 = Estandar ; 1 = Urgente
-    this->generarNumSeguimiento();
     this->generarDNI();
 }
 
+//CONTADORES ESTATICOS - PAQUETES
 int Paquete::countEstandarID = 0;
 int Paquete::countUrgenteID = 51;
 
@@ -27,9 +27,13 @@ void Paquete::generarDNI()
     this->DNI[9] = '\0';
 }
 
-void Paquete::generarNumSeguimiento()
+void Paquete::generarNumSeguimiento(bool prioridad)
 {
-    this->num_seguimiento = rand() % 9000;
+    if(prioridad == 0) {
+        this->num_seguimiento = rand() % 500;
+    } else {
+        this->num_seguimiento = rand() % 500 + 499;
+    }
 }
 
 void Paquete::asignarID()
@@ -50,6 +54,11 @@ void Paquete::asignarID()
 
 void Paquete::setID(){
     this->asignarID();
+}
+
+void Paquete::setNum_seguimiento(bool prioridad)
+{
+    this->generarNumSeguimiento(prioridad);
 }
 
 //   GETTER getPrioridad;  getID {"None"}; getNum_seguimiento{0};  getDNI[10];

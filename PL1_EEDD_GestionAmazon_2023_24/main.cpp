@@ -32,25 +32,26 @@ int main(int argc, char** argv)
         cout << "\tF. Consultar los Pedidos de las salas C y D.\n";
         cout << "\tG. Borrar los todos los Pedidos de las salas.\n";
         cout << "\tH. Simular la entrada de los Pedidos a las listas.\n";
-        cout << "\tI. Mostrar los Pedidos que hay en la lista Estandar.\n";
-        cout << "\tJ. Mostrar los Pedidos que hay en la lista Urgentes.\n";
-        cout << "\tK. Buscar en las listas el Pedido Estandar de mayor prioridad y "
+        cout << "\tI. Borrar pedidos de las listas.\n";
+        cout << "\tJ. Mostrar los Pedidos que hay en la lista Estandar.\n";
+        cout << "\tK. Mostrar los Pedidos que hay en la lista Urgentes.\n";
+        cout << "\tL. Buscar en las listas el Pedido Estandar de mayor prioridad y "
                 "el pedido Urgente con menor prioridad "
                 "prioridad.\n";
-        cout << "\tL. Reiniciar el programa.\n";
+        cout << "\tM. Reiniciar el programa.\n";
         
         
-        cout << "\tM. Crear y dibujar el ABB en consola.\n";
-        cout << "\tN. Mostrar los datos de todos los Pedidos Estandar ordenados "
+        cout << "\tN. Crear y dibujar el ABB en consola.\n";
+        cout << "\tO. Mostrar los datos de todos los Pedidos Estandar ordenados "
                 "por numero de seguimiento en orden ascendente.\n";
-        cout << "\tO. Mostrar los datos de todos los Pedidos Urgentes ordenados "
+        cout << "\tP. Mostrar los datos de todos los Pedidos Urgentes ordenados "
                 "por numero de seguimiento en orden ascendente.\n";
-        cout << "\tP. Mostrar los datos de todos los Pedidos recorriendo el arbol "
+        cout << "\tQ. Mostrar los datos de todos los Pedidos recorriendo el arbol "
                 "en inorden.\n";
-        cout << "\tQ. Buscar en el ABB el Pedido Estándar con el numero de "
+        cout << "\tR. Buscar en el ABB el Pedido Estándar con el numero de "
                 "seguimiento mas alto y mas bajo, asi como los Pedidos Urgentes "
                 "con el numero de ID mas alto y mas bajo.\n";
-        cout << "\tR. Contar el numero de Pedidos almacenados en el ABB cuyos "
+        cout << "\tS. Contar el numero de Pedidos almacenados en el ABB cuyos "
                 "numeros de seguimiento son impares.\n";
         cout << "\tT. Mostrar los Pedidos que se encuentran almacenados en un nodo "
                 "hoja.\n";
@@ -89,21 +90,23 @@ int main(int argc, char** argv)
             gestor.borraPedidosColas();
             break;
         case 'H':
-            // gestor.enlistarPedidos();
+            gestor.enlistarPedidos();
             break;
         case 'I':
-            // gestor.muestraPedidosEstandar();
+            gestor.borrarPedidosListas();
             break;
         case 'J':
-            // gestor.muestraPedidosUrgentes();
+           gestor.muestraPedidosEstandar();
             break;
         case 'K':
-            // gestor.buscarPedidos();
+            gestor.muestraPedidosUrgentes();
             break;
         case 'L':
-            // gestor.reiniciar();
+            gestor.buscarPedidos();
             break;
         case 'M':
+            gestor.reiniciar();
+            break;
             //...;
             break;
         case 'N':

@@ -9,7 +9,11 @@ Gestor::Gestor()
     estacionB = new Cola();
     estacionC = new Cola();
     estacionD = new Cola();
+    listaEstandar = new Lista();
+    listaUrgente = new Lista();
 }
+
+// INTERFAZ
 
 void Gestor::genera12Pedidos() 
 {
@@ -24,10 +28,12 @@ void Gestor::genera12Pedidos()
     }
 }
 
+// ZONA PILAS
+
 void Gestor::muestraPedidos()
 {
     pila->mostrar();
-    cout << "CANTIDAD PEDIDO = " << pila ->getLongitud() << endl;
+    cout << "CANTIDAD PEDIDO = " << pila->getLongitud() << endl;
 }
 
 void Gestor::borraPedidosPila() 
@@ -35,6 +41,9 @@ void Gestor::borraPedidosPila()
     pila->~Pila();
     pila->setLongitud(0);
 }
+
+
+// ZONA COLAS
 
 void Gestor::encolarPedidos()
 {
@@ -62,7 +71,7 @@ void Gestor::encolarPedidos()
             cout << "Paquete URGENTE ID: " << paquete->getID() << " asginado a la Estacion C " << endl; 
             estacionC->insertar(paquete);
         } else {
-            cout << "Paquete URGENTE ID: " << paquete->getID() << " asginado a la Estacion C " << endl;
+            cout << "Paquete URGENTE ID: " << paquete->getID() << " asginado a la Estacion D " << endl;
             estacionD->insertar(paquete);
         }
     }
@@ -70,17 +79,17 @@ void Gestor::encolarPedidos()
 
 void Gestor::muestraPedidosSalasAyB()
 {
-    cout << "\nESTACION A" << "NUMERO PAQUETES = " <<estacionA->getLongitud();
+    cout << "\nESTACION-A " << "NUMERO PAQUETES = " <<estacionA->getLongitud() << endl;
     estacionA->mostrar();
-    cout << "\nESTACION B" << "NUMERO PAQUETES = " <<estacionB->getLongitud();
+    cout << "\nESTACION-B " << "NUMERO PAQUETES = " <<estacionB->getLongitud() << endl;
     estacionB->mostrar();
 }
 
 void Gestor::muestraPedidosSalasCyD()
 {
-    cout << "\nESTACION C" << "NUMERO PAQUETES = " <<estacionC->getLongitud();;
+    cout << "\nESTACION-C " << "NUMERO PAQUETES = " <<estacionC->getLongitud() << endl;
     estacionC->mostrar();
-    cout << "\nESTACION D" << "NUMERO PAQUETES = " <<estacionD->getLongitud();;
+    cout << "\nESTACION-D " << "NUMERO PAQUETES = " <<estacionD->getLongitud() << endl;
     estacionD->mostrar();
 }
 
@@ -96,28 +105,92 @@ void Gestor::borraPedidosColas()
     estacionD->setLongitud(0);
 }
 
-//void Gestor::enlistarPedidos()
-//{
-//    
-//}
-//
-//void Gestor::muestraPedidosEstandar()
-//{
-//    
-//}
-//
-//void Gestor::muestraPedidosUrgentes()
-//{
-//    
-//}
-//
-//void Gestor::buscarPedidos()
-//{
-//    
-//}
-//
-//void Gestor:reiniciar()
+//ZONA LISTAS
 
+void Gestor::enlistarPedidos()
+{
+    Paquete* enlistarA;
+    Paquete* enlistarB;
+    Paquete* enlistarC;
+    Paquete* enlistarD;
+    int cantidadListados = 0;
+    
+    while(estacionA->getLongitud() > 0 || estacionB->getLongitud() > 0 || estacionC->getLongitud() > 0 || estacionD->getLongitud() > 0)
+    {
+        if(estacionA->getLongitud() > 0) {
+            cout << "\nCantidad estacionA = " << estacionA->getLongitud() << endl;
+            cout << "Paquete ESTANDAR (estacionA) " << enlistarA << " enlistado" << endl;
+            enlistarA = estacionA->eliminar(); // ESTANDAR
+            enlistarA->setNum_seguimiento(0);
+            listaEstandar->insertarNodo(enlistarA, 'p');
+        
+        } else if (estacionB->getLongitud() > 0) {
+            cout << "\nCantidad estacionB = " << estacionB->getLongitud() << endl;
+            cout << "Paquete ESTANDAR (estacionB) " << enlistarB << " enlistado" << endl;
+            enlistarB = estacionB->eliminar(); // ESTANDAR
+            enlistarB->setNum_seguimiento(0);
+            listaEstandar->insertarNodo(enlistarB, 'p');  
+            
+        } else if (estacionC->getLongitud() > 0) {
+            cout << "\nCantidad estacionC = " << estacionC->getLongitud() << endl;
+            cout << "Paquete URGENTE (estacionC) " << enlistarA << " enlistado" << endl;
+            enlistarC = estacionC->eliminar(); // URGENTE
+            enlistarC->setNum_seguimiento(1);
+            listaUrgente->insertarNodo(enlistarC, 'p');    
+            
+        } else {
+            cout << "\nCantidad estacionD = " << estacionD->getLongitud() << endl;
+            cout << "Paquete URGENTE (estacionD) " << enlistarA << " enlistado" << endl;
+            enlistarD = estacionD->eliminar(); // URGENTE
+            enlistarD->setNum_seguimiento(1);
+            listaUrgente->insertarNodo(enlistarD, 'p');
+            
+        }
+        cantidadListados++;
+    }
+    
+    cout << "\n=============================== " << endl;
+    cout << "\nLista ESTANDAR = " << listaEstandar->getLongitud() << endl;
+    cout << "Lista URGENTE = " << listaUrgente->getLongitud() << endl;
+    cout << "\nNUMERO PAQUETES LISTADOS = " << cantidadListados << endl;
+}
+
+void Gestor::borrarPedidosListas()
+{
+    listaEstandar->~Lista();
+    listaUrgente->~Lista();
+}
+
+void Gestor::muestraPedidosEstandar()
+{
+    cout << "\nPOSTEMPAQUETADO AREA ESTANDAR " << " NUMERO PAQUETES = " << listaEstandar->getLongitud() << endl;
+    cout << "\n======================================================================================= " << endl;
+    listaEstandar->recorrerLista(true);
+}
+
+void Gestor::muestraPedidosUrgentes()
+{
+    cout << "\nPOSTEMPAQUETADO AREA URGENTE " << " NUMERO PAQUETES = " << listaUrgente->getLongitud();
+    cout << "\n=======================================================================================" << endl;
+    listaUrgente->recorrerLista(true);
+}
+
+void Gestor::buscarPedidos()
+{
+    listaEstandar->recorrerLista(true);
+    cout<< listaEstandar->esActual() << endl;
+    listaUrgente->recorrerLista(false);
+    cout<< listaUrgente->esActual() << endl;
+}
+
+// INTERFAZ
+
+void Gestor::reiniciar()
+{
+    borraPedidosPila();
+    borraPedidosColas();
+    borrarPedidosListas();
+}
 
 Gestor::~Gestor()
 {

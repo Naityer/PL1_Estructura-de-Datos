@@ -22,7 +22,7 @@ public:
     //SET
     bool setPrioridad();
     void setID();
-    int setNum_seguimiento();
+    void setNum_seguimiento(bool prioridad);
     char setDNI();
     int getCantidadPaquetes();
     ~Paquete();
@@ -41,7 +41,7 @@ private:
 
 //METODOS
     void generarDNI();
-    void generarNumSeguimiento();
+    void generarNumSeguimiento(bool prioridad);
     void asignarID();
 };
 
