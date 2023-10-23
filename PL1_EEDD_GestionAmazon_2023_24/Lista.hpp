@@ -10,19 +10,15 @@ public:
     ~Lista ();
     
     void insertarNodo(Paquete* p, char c) ;
-    void borrarNodo(char c) ;
+    void buscarElemento(char c) ;
     bool listaVacia();
-    void recorrerLista(bool orden); // 1-True = ASCENDENTE 0-False = DESCENDENTE
-    void esSiguiente() ;
-    void esAnterior();
+    void recorrerLista(bool orden); // 1-True = DESCENDENTE 0-False = ASCENDENTE
     void esPrimero();
     void esUltimo();
-    bool esActual();
-    Paquete* valorActual();
     int getLongitud();
     void setLogitud(int v);
-    void getPrimerElemento();
-
+    
+    Paquete* valorActual();
 private:
     pnodoLista primero, actual, final;
     int longitud;

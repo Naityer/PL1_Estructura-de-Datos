@@ -30,39 +30,50 @@ void Lista::insertarNodo(Paquete* p, char c) {
     this->longitud++;
 }
 
-void Lista::borrarNodo(char c) {
+void Lista::buscarElemento(char c) {
     
     char tipoBorrado; 
     tipoBorrado = c;
     pnodoLista aux = NULL;
+    
+    
+    // Títulos de las columnas
+    cout << left << setw(20) << "TIPO_PRIORIDAD" << setw(20) << "ID_PAQUETE" << setw(20) << "NUM_SEGUIMIENTO" << setw(20) << "DNI_CLIENTE" << endl;
+    cout << left << setw(20) << "______________" << setw(20) << "__________" << setw(20) << "_______________" << setw(20) << "___________" << endl;
     
     if(tipoBorrado == 'f') { //Eliminación por el final
         if(primero == final) { //Sólo hay elemento
             aux = final;
             primero = final = NULL; 
             aux=NULL;
-            delete aux;
         } else {
             aux = final; 
             final = final->anterior;
             aux->anterior=NULL;
             final->siguiente=NULL; 
-            delete aux;
         }
+        
+        // Datos de la fila
+        cout << left << setw(20) << aux->paquete->getPrioridad() << setw(20) << aux->paquete->getID() << setw(20) << aux->paquete->getNum_seguimiento() << setw(20) << aux->paquete->getDNI() << endl;
+        // Separacion de columnas
+        cout << left << setw(20) << "______________" << setw(20) << "__________" << setw(20) << "_______________" << setw(20) << "___________" << endl;
+        
     } else if(tipoBorrado =='p') {//Eliminación por el Principio
         pnodoLista aux = NULL;
         if(primero == final) {//Sólo hay elemento
             aux = primero;
             primero = final = NULL; 
             aux = NULL;
-            delete aux;
         } else {
         aux = primero; 
         primero = primero->siguiente; 
         aux->siguiente = NULL;
         primero->anterior = NULL; 
-        delete aux;
         }
+        // Datos de la fila
+        cout << left << setw(20) << aux->paquete->getPrioridad() << setw(20) << aux->paquete->getID() << setw(20) << aux->paquete->getNum_seguimiento() << setw(20) << aux->paquete->getDNI() << endl;
+        // Separacion de columnas
+        cout << left << setw(20) << "______________" << setw(20) << "__________" << setw(20) << "_______________" << setw(20) << "___________" << endl;
     }
 }
 
@@ -103,21 +114,6 @@ void Lista::recorrerLista(bool orden)
     cout << endl;
 }
 
-void Lista::getPrimerElemento()
-{
-    
-}
-
-void Lista::esSiguiente()
-{
-    if (actual) actual = actual->siguiente;
-}
-
-void Lista::esAnterior()
-{
-    if(actual) actual = actual->anterior;
-}
-
 void Lista::esPrimero()
 {
     actual = primero;
@@ -126,16 +122,6 @@ void Lista::esPrimero()
 void Lista::esUltimo()
 {
     actual = final;
-}
-
-bool Lista::esActual()
-{
-    return actual != NULL;
-}
-
-Paquete* Lista::valorActual()
-{
-    return actual->paquete;
 }
 
 //GETTER

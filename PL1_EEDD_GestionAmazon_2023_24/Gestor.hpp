@@ -11,6 +11,8 @@ class Gestor
 {
 public:
     Gestor();
+    
+    //INTERFAZ PARTE 1
     void genera12Pedidos(); // Option A
     void muestraPedidos();  // Option B
     void borraPedidosPila(); // Option C
@@ -36,15 +38,8 @@ public:
 //    PedidosEnArbol()
     
 private: 
-
-//    bool usadosA[49];
-//    bool usadosB[49];
-//    bool ocupadasP[99];
-//    bool ocupadasS[99];
-//    int IDsA[49];
-//    int IDsB[49];
-//    int habPrimPlanta[99];
-//    int habSegPlanta[99];
+    
+    //ESTRUTURAS PARTE 1
     Pila* pila;
     Cola* estacionA;
     Cola* estacionB;
@@ -52,8 +47,6 @@ private:
     Cola* estacionD;
     Lista* listaEstandar;
     Lista* listaUrgente;
-//    Lista* listaA;
-//    Lista* listaB;
 //    Arbol* arbol;
 
 };

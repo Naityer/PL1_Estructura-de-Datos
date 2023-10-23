@@ -48,6 +48,7 @@ void Gestor::borraPedidosPila()
 void Gestor::encolarPedidos()
 {
     Paquete* paquete;
+    
     cout << "Encolando " << pila->getLongitud() << " pedidos... " << endl;
     cout << "===================================================" << endl;
     
@@ -57,23 +58,27 @@ void Gestor::encolarPedidos()
         paquete = pila->extraer();
         paquete->setID();
         
-        // 0 - PEDIDO ESTANDAR 
-        if(estacionA->getLongitud() <= estacionB->getLongitud() && paquete->getPrioridad() == 0) {
+        // 0 - PEDIDO ESTANDAR
+        if (paquete->getID() == 0) {
+            cout << "COLAS LLENAS !!! paquete CLIENTE: " << paquete->getDNI() << " ha sido eliminado" << endl;
+            paquete->~Paquete();
+        }
+        else if(estacionA->getLongitud() <= estacionB->getLongitud() && paquete->getPrioridad() == 0 && paquete->getCountEstandar() <= 49) {
             cout << "Paquete ESTANDAR ID: " << paquete->getID() << " asginado a la Estacion A " << endl; 
             estacionA->insertar(paquete);
         } 
-        else if(estacionA->getLongitud() > estacionB->getLongitud() && paquete->getPrioridad() == 0) {
+        else if(estacionA->getLongitud() > estacionB->getLongitud() && paquete->getPrioridad() == 0 && paquete->getCountEstandar() <= 49) {
             cout << "Paquete ESTANDAR ID: " << paquete->getID() << " asginado a la Estacion B " << endl; 
             estacionB->insertar(paquete);
         } 
         // 1 - PEDIDO URGENTE
-        else if(estacionC->getLongitud() <= estacionD->getLongitud() && paquete->getPrioridad() == 1) {
+        else if(estacionC->getLongitud() <= estacionD->getLongitud() && paquete->getPrioridad() == 1 && paquete->getCountUrgente() >= 51 && paquete->getCountUrgente() <= 99) {
             cout << "Paquete URGENTE ID: " << paquete->getID() << " asginado a la Estacion C " << endl; 
             estacionC->insertar(paquete);
-        } else {
+        } else if (estacionC->getLongitud() > estacionD->getLongitud() && paquete->getPrioridad() == 1 && paquete->getCountUrgente() >= 51 && paquete->getCountUrgente() <= 99) {
             cout << "Paquete URGENTE ID: " << paquete->getID() << " asginado a la Estacion D " << endl;
             estacionD->insertar(paquete);
-        }
+        } 
     }
 }
 
@@ -178,9 +183,9 @@ void Gestor::muestraPedidosUrgentes()
 void Gestor::buscarPedidos()
 {
     listaEstandar->recorrerLista(true);
-    cout<< listaEstandar->esActual() << endl;
+    listaEstandar->buscarElemento('p');
     listaUrgente->recorrerLista(false);
-    cout<< listaUrgente->esActual() << endl;
+    listaUrgente->buscarElemento('f');
 }
 
 // INTERFAZ

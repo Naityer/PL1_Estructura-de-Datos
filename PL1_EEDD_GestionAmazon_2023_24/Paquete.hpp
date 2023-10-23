@@ -18,6 +18,8 @@ public:
     int getID();
     int getNum_seguimiento();
     char* getDNI();
+    int getCountEstandar();
+    int getCountUrgente();
     
     //SET
     bool setPrioridad();

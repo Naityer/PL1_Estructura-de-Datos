@@ -6,11 +6,11 @@ Paquete::Paquete()
     this->generarDNI();
 }
 
-//CONTADORES ESTATICOS - PAQUETES
+//CONTADORES ESTATICOS - PAQUETES ====================================================================================
 int Paquete::countEstandarID = 0;
 int Paquete::countUrgenteID = 51;
 
-//FUNCIONES DE PAQUETES
+//FUNCIONES DE PAQUETES ==============================================================================================
 
 void Paquete::generarDNI()
 {
@@ -39,18 +39,18 @@ void Paquete::generarNumSeguimiento(bool prioridad)
 void Paquete::asignarID()
 {
     // 0 - PRIORIDAD ESTANDAR
-    if(countEstandarID >= 0 && countEstandarID <= 49 && this->prioridad == 0) {
+    if(countEstandarID >= 0 && countEstandarID < 49 && this->prioridad == 0) {
             countEstandarID++;
             this->ID = countEstandarID;
     
     // 1 - PRIORIDAD URGENTE
-    } else if (countUrgenteID >= 51 && countUrgenteID <= 99 && this->prioridad == 1) {
+    } else if (countUrgenteID >= 51 && countUrgenteID < 99 && this->prioridad == 1) {
         countUrgenteID++;
         this->ID = countUrgenteID;
     } 
 }
 
-// SETTER
+// SETTER ===================================================================================================
 
 void Paquete::setID(){
     this->asignarID();
@@ -61,7 +61,7 @@ void Paquete::setNum_seguimiento(bool prioridad)
     this->generarNumSeguimiento(prioridad);
 }
 
-//   GETTER getPrioridad;  getID {"None"}; getNum_seguimiento{0};  getDNI[10];
+// GETTER getPrioridad;  getID {"None"}; getNum_seguimiento{0};  getDNI[10]; ================================
 
 bool Paquete::getPrioridad()
 {
@@ -81,6 +81,16 @@ int Paquete::getNum_seguimiento()
 char* Paquete::getDNI()
 {
     return DNI;
+}
+
+int Paquete::getCountEstandar()
+{
+    return countEstandarID;
+}
+
+int Paquete::getCountUrgente()
+{
+    return countUrgenteID;
 }
 
 Paquete::~Paquete()
